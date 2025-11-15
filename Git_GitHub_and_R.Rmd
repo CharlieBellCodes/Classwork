@@ -1,10 +1,12 @@
 ---
 title: "Classwork Activity"
-author: "Enter Your Name"
+author: "Charlize Gutierrez-Lopez"
 output: html_notebook
 ---
 
-
+```{r}
+library(dplyr)
+```
 # Instructions (Step by Step)
 
 ## Step 1: Create fake data
@@ -28,13 +30,21 @@ head(students)
 ```{r}
 # Remove the Name column
 
+Students_Clean <- students %>%
+  select(-Name)
+
+```
+
+```{r}
+Students_Clean
+
 ```
 
 
 ### Question:
 Why might someone drop a column like name or ID from a dataset?
 
-### Answer:
+### Answer: Confidential information or it might just not be important. The numerical variables are usually more important.
 
 ## Step 3: Visualize
 ```{r}
@@ -58,20 +68,53 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 ### Questions:
 
 1. What pattern or difference do you see in the chart?
+
+The pattern I am seeing is that all of these majors satisfaction level is usually between 6 and 8. Every other major has a mean in the middle of the histograms, except data science, which usually has a lower satisfaction.
+
 2. What might explain it?
+
+Working is usually done more because it is required as opposed to because it is fun. So it is understandable that the satisfaction levels are not 9 or 10. The satisfaction level may be low because of an array of things. For example, company culture.
+
 3. Do you think this chart is accurate?
+
+No. I do not think this chart is accurate.
+
 4. Why? Why not?
+
+Satisfaction is not numerical and can be different for everyone. As a result, I do not think this chart is accurate.
 
 ## Step 5: Questions on Git, GitHub and R Markdown
 
 ### Questions:
 
 1. What does git add do?
+
+
 2. What is the difference between git commit and git push?
+
+
 3. Why is it useful to use GitHub for your code or data projects?
+
+
 4. How could version control help when collaborating?
+
 5. What is the difference between a code chunk and regular text in R Markdown?
+
+
 6. How could R Markdown help you explain your analysis to someone else?
 
+
 ### Answers:
+
+Git add stages a file.
+
+Git commit saves staged changes. Git push pushes new commits.
+
+GitHub is useful to use because you can access your project from a different computer or share it with other people.
+
+Version control can help track and manages changes to the code, will also allow people to work on different parts of the code at the same time.
+
+A code chunk allows you to run code in markdown. Regular text will only allow words.
+
+R markdown can include your step by step explanations in between your code in an easy to read manner(as opposed to a bunch of comments in the code that may be hard to follow).
 
